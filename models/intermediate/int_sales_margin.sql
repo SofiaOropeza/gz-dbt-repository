@@ -1,4 +1,5 @@
 select 
+    s.*,
     s.revenue - (quantity * purchase_price) as margin,
     quantity * purchase_price as purchase_cost
 from {{ ref("stg_raw__sales") }} as s
